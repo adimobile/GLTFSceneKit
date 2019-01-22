@@ -919,7 +919,7 @@ public class GLTFUnarchiver {
         property.maxAnisotropy = texture.maxAnisotropy
         property.contentsTransform = texture.contentsTransform
         property.mappingChannel = texture.mappingChannel
-        if #available(OSX 10.13, *) {
+        if #available(OSX 10.13, iOS 11.0, *) {
             property.textureComponents = texture.textureComponents
         }
     }
@@ -990,7 +990,7 @@ public class GLTFUnarchiver {
                 try self.setTexture(index: metallicTexture.index, to: material.roughness)
                 material.roughness.mappingChannel = metallicTexture.texCoord
                 
-                if #available(OSX 10.13, *) {
+                if #available(OSX 10.13, iOS 11.0, *) {
                     material.metalness.textureComponents = .blue
                     material.roughness.textureComponents = .green
                 } else {
