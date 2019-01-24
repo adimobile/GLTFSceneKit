@@ -479,7 +479,7 @@ public class GLTFUnarchiver {
             return geometryElement
         }
         
-        if source.vectorCount <= UInt32(0xFFFFFFFF) {
+        if source.vectorCount <= UInt32.max {
             var indices = [UInt32](repeating: 0, count: source.vectorCount)
             for i in 0..<source.vectorCount {
                 indices[i] = UInt32(i)
